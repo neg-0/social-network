@@ -8,6 +8,7 @@ import { alpha } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function UserProfile({ profile, closeFunc }) {
     if (profile === undefined)
@@ -37,11 +38,13 @@ export default function UserProfile({ profile, closeFunc }) {
                     </Typography> */}
                     {/* </Toolbar> */}
                 </AppBar>
-                <CardMedia
-                    component="img"
-                    image={profile.profileImage}
-                    alt={profile.firstName}
-                />
+                <Link to={`/profiles/${profile.id}/profile-image`}>
+                    <CardMedia
+                        component="img"
+                        image={profile.profileImage}
+                        alt={profile.firstName}
+                    />
+                </Link>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {profile.firstName} {profile.lastName}
