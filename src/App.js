@@ -5,10 +5,14 @@ import About from './components/About';
 import Profiles from './components/Profiles';
 import UserProfile from './components/UserProfile';
 import UserPicture from './components/UserPicture';
+import Nav from './components/Nav';
 
 function App() {
   return (
     <div className="App">
+      <header>
+        <Nav />
+      </header>
       <Router>
         <Route path="/profiles/:id/profile-image" component={UserPicture} />
         <Route path="/profiles/:id" component={UserProfile} />
