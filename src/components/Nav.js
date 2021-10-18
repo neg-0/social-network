@@ -12,7 +12,7 @@ export default function Nav() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
                     {/* <IconButton
                         size="large"
@@ -23,15 +23,13 @@ export default function Nav() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        My Profile Page
-                    </Typography>
                     <NavLink to="/" activeStyle={activeButtonStyle} exact><Button color="inherit">Home</Button></NavLink>
                     <NavLink to="/profiles" activeStyle={activeButtonStyle}><Button color="inherit">Profiles</Button></NavLink>
                     <NavLink to="/about" activeStyle={activeButtonStyle}><Button color="inherit">About</Button></NavLink>
                     {/* <Button color="inherit">Login</Button> */}
                 </Toolbar>
             </AppBar>
+            <Toolbar />
         </Box>
     );
 }
