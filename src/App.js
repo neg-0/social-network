@@ -1,15 +1,15 @@
-import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Profiles from './components/Profiles';
 import UserPicture from './components/UserPicture';
 import Nav from './components/Nav';
+import { Box } from '@mui/system';
 
 
 function App() {
   return (
-    <div className="App">
+    <Box sx={{ textAlign: "center" }}>
       <Router>
         <header>
           <Nav />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/" component={Home} />
         </Switch>
       </Router>
-    </div>
+    </Box>
   );
 }
 
