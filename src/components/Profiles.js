@@ -1,18 +1,44 @@
-import { UserProfile } from "./UserProfileDB"
-import ProfileCard from "./ProfileCard"
+import { Grid, Paper, Typography } from "@mui/material"
 import { Box } from "@mui/system"
-import { Typography } from "@mui/material"
+import { useParams } from "react-router"
+import ProfileCard from "./ProfileCard"
+import UserDetails from "./UserProfile"
+import { UserProfile } from "./UserProfileDB"
 
-export default function Profiles() {
+export default function Profiles({ history }) {
+
+    const { id } = useParams()
+
+    function handleSelection(profile) {
+        //window.location = `/profiles/${profile}`
+        if (profile === undefined) {
+            history.push(`/profiles`)
+        } else {
+            history.push(`/profiles/${profile}`)
+        }
+    }
+
     return (
         <div>
-            <Box sx={{ p: 4 }}>
+            <Box sx={{ p: 4, width: "100%" }}>
                 <Typography variant="h2">Contacts</Typography>
-                <Box display="flex" flexWrap="wrap">
-                    {UserProfile.contactProfiles.map((profile, index) => <ProfileCard profile={profile} />)}
-                </Box>
+                <Grid container spacing={2}>
+                    <Grid item xs={id === undefined ? 12 : 6}>
+                        <Grid container spacing={2}>
+                            {UserProfile.contactProfiles.map((profile, index) => (
+                                <Grid item key={index} sm={12} md={6} lg={4}>
+                                    <ProfileCard profile={profile} id={index} selectFunc={handleSelection} />
+                                </Grid>))}
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Paper>
+                            <UserDetails profile={UserProfile.contactProfiles[id]} closeFunc={handleSelection} />
+                        </Paper>
+                    </Grid>
+                </Grid>
             </Box>
-        </div>
+        </div >
     )
 }
 
