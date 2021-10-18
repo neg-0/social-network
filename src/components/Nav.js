@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { BrowserRouter, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
 
@@ -26,11 +26,9 @@ export default function Nav() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         My Profile Page
                     </Typography>
-                    <BrowserRouter>
-                        <NavLink to="/" activeStyle={activeButtonStyle} exact><Button color="inherit">Home</Button></NavLink>
-                        <NavLink to="/about" activeStyle={activeButtonStyle}><Button color="inherit">About</Button></NavLink>
-                        <NavLink to="/profiles" activeStyle={activeButtonStyle}><Button color="inherit">Profiles</Button></NavLink>
-                    </BrowserRouter>
+                    <NavLink to="/" activeStyle={activeButtonStyle} exact><Button color="inherit">Home</Button></NavLink>
+                    <NavLink to="/profiles" activeStyle={activeButtonStyle}><Button color="inherit">Profiles</Button></NavLink>
+                    <NavLink to="/about" activeStyle={activeButtonStyle}><Button color="inherit">About</Button></NavLink>
                     {/* <Button color="inherit">Login</Button> */}
                 </Toolbar>
             </AppBar>
