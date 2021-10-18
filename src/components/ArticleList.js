@@ -6,7 +6,7 @@ export default function ArticleList() {
     return (
         <div>
             <Box display="flex" flexWrap="wrap">
-                {UserProfile.newsArticles.map((article, index) => <Article article={article} />)}
+                {UserProfile.newsArticles.map((article, index) => <Article key={index} article={article} />)}
             </Box>
         </div>
     )
