@@ -7,7 +7,14 @@ import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
 
-    const activeButtonStyle = { backgroundColor: "#76b3ef" }
+    const activeButtonStyle = { backgroundColor: "#76b3ef", borderRadius: 8 }
+
+    const buttonStyle = {
+        backgroundColor: "#003399",
+        color: "#fff",
+        m: 0.5,
+        '&:hover': { backgroundColor: "#0044cc" }
+    }
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -22,9 +29,9 @@ export default function Nav() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    <NavLink to="/" activeStyle={activeButtonStyle} exact><Button color="inherit">Home</Button></NavLink>
-                    <NavLink to="/profiles" activeStyle={activeButtonStyle}><Button color="inherit">Profiles</Button></NavLink>
-                    <NavLink to="/about" activeStyle={activeButtonStyle}><Button color="inherit">About</Button></NavLink>
+                    <NavLink to="/" activeStyle={activeButtonStyle} style={{ textDecoration: "none" }} exact><Button sx={buttonStyle}>Home</Button></NavLink>
+                    <NavLink to="/profiles" activeStyle={activeButtonStyle} style={{ textDecoration: "none" }}><Button sx={buttonStyle}>Profiles</Button></NavLink>
+                    <NavLink to="/about" activeStyle={activeButtonStyle} style={{ textDecoration: "none" }}><Button sx={buttonStyle}>About</Button></NavLink>
                     {/* <Button color="inherit">Login</Button> */}
                 </Toolbar>
             </AppBar>
