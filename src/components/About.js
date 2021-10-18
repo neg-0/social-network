@@ -4,9 +4,9 @@ import { UserProfile } from "./UserProfileDB"
 
 
 export default function About() {
-    return (<Box sx={{ p: 10, width: "50vw", mx: "auto" }}>
-        <Paper elevation={5} sx={{ p: 5 }}>
-            <Typography variant="h2">About Us</Typography>
+    return (<Box sx={{ p: 4, width: "50vw", mx: "auto" }}>
+        <Typography variant="h2">About Us</Typography>
+        <Paper elevation={5} sx={{ p: 5, m: 4 }}>
             <Typography variant="p" component="div" margin={2}>This page is a poorly done mockup of a generic social networking site, offering moderately
                 acclaimed, universally acknowledged coverage of breaking local news events. Rising from its
                 humble beginnings as a print newspaper in 1756, this page now enjoys a daily readership of 1 or 2 views a day, mainly when the instructors
