@@ -5,7 +5,7 @@ import { Box } from "@mui/system"
 export default function ArticleList() {
     return (
         <div>
-            <Box display="flex">
+            <Box display="flex" flexWrap="wrap">
                 {UserProfile.newsArticles.map((article, index) => <Article article={article} />)}
             </Box>
         </div>
