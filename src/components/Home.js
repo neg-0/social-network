@@ -1,5 +1,12 @@
+import { Box } from "@mui/system"
+import ArticleList from "./ArticleList"
+import { Typography } from "@mui/material"
+
 export default function Home() {
-    return <h1>Home</h1>
+    return (<Box sx={{ p: 4 }}>
+        <Typography variant="h2">News</Typography>
+        <ArticleList />
+    </Box>)
 }
 
 //Root Route: "/"
